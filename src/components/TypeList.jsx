@@ -1,7 +1,9 @@
 import React from 'react';
 
-const TypeList = () => {
-  const type = {
+const TypeList = (types) => {
+  const typeList = types.types;
+
+  const typeColours = {
     'bug': '#9FB922',
     'dark': '#665141',
     'dragon': '#794AE3',
@@ -22,13 +24,19 @@ const TypeList = () => {
     'water': '#4B88FE'
   }
 
+    const type = typeList.map((t) => {
+      return (
+        <span key={t.type.name} style={{ backgroundColor: typeColours[t.type.name] }}
+          className="text-xs px-2 py-1 rounded-md mr-1">
+          {t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)}
+        </span>
+      );
+    })
+
   return (
     <div>
       Type: 
-      <span style={{ backgroundColor: type['water'] }}
-        className="text-xs px-2 py-1 rounded-md">
-        Water
-      </span>
+      {type}
     </div>
   );
 }
