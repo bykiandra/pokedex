@@ -1,9 +1,9 @@
-import React from 'react';
+// TODO: fix any types
 
-const TypeList = (types) => {
+const TypeList = (types: any) => {
   const typeList = types.types;
 
-  const typeColours = {
+  const typeColours: any = {
     'bug': '#9FB922',
     'dark': '#665141',
     'dragon': '#794AE3',
@@ -24,7 +24,7 @@ const TypeList = (types) => {
     'water': '#4B88FE'
   }
 
-    const type = typeList.map((t) => {
+    const type = typeList.map((t: any) => {
       return (
         <span key={t.type.name} style={{ backgroundColor: typeColours[t.type.name] }}
           className="text-xs px-2 py-1 rounded-md mr-1">
@@ -35,8 +35,7 @@ const TypeList = (types) => {
 
   return (
     <div>
-      Type: 
-      {type}
+      Type: {type}
     </div>
   );
 }

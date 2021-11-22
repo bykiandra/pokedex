@@ -1,15 +1,15 @@
-import React from 'react';
+// TODO: fix any type
 
 import Info from './Info';
 
-const Pokemon = (pokemon) => {
+const Pokemon = (pokemon: any) => {
   const p = pokemon.pokemon;
 
-  const nameUpperCase = (name) => {
+  const nameUpperCase = (name: string) => {
     return name.charAt(0).toUpperCase() + name.slice(1)
   }
 
-  const pokemonName = (name) => {
+  const pokemonName = (name: string) => {
     let nameSplit = []
     let displayName = ''
 

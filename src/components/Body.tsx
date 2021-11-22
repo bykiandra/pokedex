@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 import SearchBar from './SearchBar';
@@ -9,18 +9,17 @@ const Body = () => {
   const [searchInput, setSearchInput] = useState('');
   const [pokemon, setPokemon] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit: HandleSubmit = () => {
     if (searchInput) {
       axios.get(apiURL + searchInput.toLowerCase()).then((data) => {
         setPokemon(data.data);
+        console.log(data.data)
       });
       setSearchInput('');
     }
   }
 
-  const handleChange = (e) => {
+  const handleChange: HandleChange = (e) => {
     setSearchInput(e.target.value);
   }
 

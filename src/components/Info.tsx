@@ -1,9 +1,9 @@
-import React from 'react';
+// TODO: fix any type
 
 import TypeList from './TypeList';
 import Stats from './Stats';
 
-const Info = (pokemon) => {
+const Info = (pokemon: any) => {
   const p = pokemon.pokemon;
 
   return (
