@@ -1,0 +1,72 @@
+:root {
+  --hp: rgb(248, 113, 113);
+  --att: rgb(245, 158, 11);
+  --def: rgb(252, 211, 77);
+  --spa: rgb(147, 197, 253);
+  --spd: rgb(52, 211, 153);
+  --spe: rgb(249, 168, 212);
+}
+
+progress[value] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  height: 16px;
+  margin-bottom: 4px;
+}
+
+/* Background colour cannot be changed in Firefox. */
+progress::-webkit-progress-bar {
+  background-color: rgb(229, 231, 235);
+}
+
+/* Chrome and Safari. */
+progress.hp::-webkit-progress-value {
+  background-color: var(--hp);
+}
+
+progress.att::-webkit-progress-value {
+  background-color: var(--att);
+}
+
+progress.def::-webkit-progress-value {
+  background-color: var(--def);
+}
+
+progress.spa::-webkit-progress-value {
+  background-color: var(--spa);
+}
+
+progress.spd::-webkit-progress-value {
+  background-color: var(--spd);
+}
+
+progress.spe::-webkit-progress-value {
+  background-color: var(--spe);
+}
+
+/* Firefox. */
+progress.hp::-moz-progress-bar {
+  background-color: var(--hp);
+}
+
+progress.att::-moz-progress-bar {
+  background-color: var(--att);
+}
+
+progress.def::-moz-progress-bar {
+  background-color: var(--def);
+}
+
+progress.spa::-moz-progress-bar {
+  background-color: var(--spa);
+}
+
+progress.spd::-moz-progress-bar {
+  background-color: var(--spd);
+}
+
+progress.spe::-moz-progress-bar {
+  background-color: var(--spe);
+}
