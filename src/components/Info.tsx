@@ -1,25 +1,27 @@
-// TODO: fix any type
-
 import TypeList from './TypeList';
 import Stats from './Stats';
 
-const Info = (pokemon: any) => {
-  const p = pokemon.pokemon;
+interface Props {
+  pokemon: Pokemon
+}
+
+const Info = ({ pokemon }: Props) => {
+  const p = pokemon;
 
   return (
     <div className="flex flex-col justify-center items-ceter text-xs">
       <TypeList types={p.types} />
       <div className="my-4">
-        Weight: {parseFloat(p.weight) / 10} kg<br />
-        Height: {parseFloat(p.height) / 10} m
+        Weight: {p.weight / 10} kg<br />
+        Height: {p.height / 10} m
       </div>
       <Stats
-        hp={p.stats[0].base_stat}
-        att={p.stats[1].base_stat}
-        def={p.stats[2].base_stat}
-        spa={p.stats[3].base_stat}
-        spd={p.stats[4].base_stat}
-        spe={p.stats[5].base_stat}
+        hp={p.stats[0]}
+        att={p.stats[1]}
+        def={p.stats[2]}
+        spa={p.stats[3]}
+        spd={p.stats[4]}
+        spe={p.stats[5]}
       />
     </div>
   )

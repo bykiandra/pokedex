@@ -1,9 +1,9 @@
-// TODO: fix any types
+interface Props {
+  types: string[]
+}
 
-const TypeList = (types: any) => {
-  const typeList = types.types;
-
-  const typeColours: any = {
+const TypeList = ({ types }: Props) => {
+  const typeColours: { [key: string]: string } = {
     'bug': '#9FB922',
     'dark': '#665141',
     'dragon': '#794AE3',
@@ -24,11 +24,11 @@ const TypeList = (types: any) => {
     'water': '#4B88FE'
   }
 
-    const type = typeList.map((t: any) => {
+    const type = types.map((t: string) => {
       return (
-        <span key={t.type.name} style={{ backgroundColor: typeColours[t.type.name] }}
+        <span key={t} style={{ backgroundColor: typeColours[t] }}
           className="text-xs px-2 py-1 rounded-md mr-1">
-          {t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)}
+          {t.charAt(0).toUpperCase() + t.slice(1)}
         </span>
       );
     })
