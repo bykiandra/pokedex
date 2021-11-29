@@ -34,6 +34,9 @@ const Body = () => {
         }
 
         setPokemon(result);
+      }).catch((err) => {
+        setPokemon(null)
+        alert('That Pokémon does not exist. Please try again.')
       });
       setSearchInput('');
     }
@@ -49,7 +52,7 @@ const Body = () => {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
-      { pokemon != null ? <Pokemon pokemon={pokemon} /> : <></> }
+      { pokemon ? <Pokemon pokemon={pokemon} /> : <></> }
     </>
   );
 }
